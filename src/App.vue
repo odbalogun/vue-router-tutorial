@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-link v-bind:to="'/'">Home</router-link>
     <router-link v-bind:to="'/about'">About</router-link>
+    <router-link v-bind:to="'/profile'">Profile</router-link>
     <router-view/>
   </div>
 </template>
