@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     GoToRoute: function () {
-      this.$router.push({name: 'Paramdetails', params: { id: this.UserInput }})
+      this.$router.push({name: 'ParamDetails', params: { id: this.UserInput }})
     }
   }
 }
