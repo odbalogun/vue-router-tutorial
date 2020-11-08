@@ -33,7 +33,29 @@ const routes = [
     name: 'ParamDetails'
   }
 ]
-export default new Router({
+
+const router = new Router({
   routes: routes,
   mode: 'history'
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.path === '/param') {
+    if (localStorage.getItem('user') === null) {
+      var user = prompt('Please enter your username')
+      var pass = prompt('Please enter your password')
+
+      if (user === 'hozier' && pass === 'password') {
+        localStorage.setItem('user', user)
+        next()
+      } else {
+        alert('Wrong authentication credentials')
+        return
+      }
+    }
+  }
+
+  next()
+})
+
+export default router
